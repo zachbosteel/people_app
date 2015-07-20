@@ -17,12 +17,7 @@
     $scope.count = $scope.people.length
 
     $scope.toggleBio = function( person){
-      var index = $scope.people.indexOf(person);
-     if (!$scope.people[index].bioShown){
-        $scope.people[index].bioShown = true;
-     } else if ($scope.people[index].bioShown){
-        $scope.people[index].bioShown = false;
-     };
+      person.bioShown = !person.bioShown;
     };
 
     $scope.isShown = function(person){
@@ -39,7 +34,9 @@
         bioShown: false
       };
       $scope.people.push(newPerson);
-      $scope.count = $scope.people.length
+      $scope.count = $scope.people.length;
+      $scope.newPersonName = "";
+      $scope.newPersonBio = "";
     };
 
     $scope.deletePerson = function(person){
