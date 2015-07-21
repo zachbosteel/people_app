@@ -11,14 +11,14 @@
   <h1>Shopping Cart</h1>
     <div>
     <table>
-    <tr ng-repeat="product in cartedProducts" ng-click="removeProduct(product)">
+    <tr ng-repeat="product in cartedProducts track by $index" ng-click="removeProduct(product)">
       <td>{{product.name}}</td>
       <td>${{product.price}}</td>
     </tr>
     </table>
     </div>
-  <h4> Subtotal: {{subtotal}}</h4>  
-  <h4> Tax: {{tax}}</h4>
-  <h4> Total: {{total}}</h4>
+  <h4> Subtotal: {{subtotal | currency}}</h4>  
+  <h4> Tax: {{tax | currency}}</h4>
+  <h4> Total: {{total | currency}}</h4>
   </div>
 </div>
